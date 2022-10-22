@@ -75,7 +75,7 @@ public class Cnpj{
     public String toString() {
         return "\n\uD83D\uDCCB Info Básica:"+ "\n" +
                 "CNPJ: " + this.cnpj + "\n" +
-                "Data de Inicio Atividade: " + this.data_inicio_atividade + "\n" +
+                "Data de Inicio Atividade: " + Utils.formatDate(this.data_inicio_atividade) + "\n" +
                 "ID Matriz Filial: " + this.identificador_matriz_filial + "\n" +
                 "Desc Matriz Filial: " + this.descricao_matriz_filial + "\n" +
                 "Razão Social: " + this.razao_social + "\n" +

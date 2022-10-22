@@ -5,6 +5,13 @@ import telegram_bot.api.Api;
 import telegram_bot.api.GetInfoException;
 import telegram_bot.api.Response;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+
 class HolidayInfo {
     public String date;
     public String name;
@@ -24,8 +31,8 @@ public class Holiday {
         String h = "";
         for(HolidayInfo holiday : this.holidays) {
             h += "\uD83D\uDCCC " + holiday.name+"\n" +
-                "Data: " + holiday.date+"\n" +
-                "Tipo: " + holiday.type+"\n\n";
+                "Data: " + Utils.formatDate(holiday.date) +"\n" +
+                "Tipo: nacional \n\n";
         }
         return "\n\uD83D\uDCC5 FERIADOS: \n\n" + h;
     }

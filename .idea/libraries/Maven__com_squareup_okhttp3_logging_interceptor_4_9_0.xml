@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Maven: com.squareup.okhttp3:logging-interceptor:4.9.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/logging-interceptor/4.9.0/logging-interceptor-4.9.0.jar!/" />
+      <root url="file://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.9.1" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/pengrad/java-telegram-bot-api/6.2.0/java-telegram-bot-api-6.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/logging-interceptor/4.9.0/logging-interceptor-4.9.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/logging-interceptor/4.9.0/logging-interceptor-4.9.0-sources.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.9.1" recursive="false" />
+  </library>
+</component>

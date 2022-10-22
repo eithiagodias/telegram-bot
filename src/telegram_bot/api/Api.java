@@ -1,8 +1,5 @@
 package telegram_bot.api;
 
-import com.google.gson.Gson;
-import telegram_bot.entity.Bank;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;

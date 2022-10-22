@@ -3,7 +3,6 @@ package telegram_bot.managers;
 import telegram_bot.api.GetInfoException;
 import telegram_bot.entity.*;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

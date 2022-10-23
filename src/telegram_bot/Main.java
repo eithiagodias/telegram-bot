@@ -25,7 +25,7 @@ public class Main {
 
 		int m = 0;
 
-		TelegramBot bot = new TelegramBot("5668370444:AAGDK2RvU7GdvLpLsa9b7YVGp5Oq6-fEUoQ");
+		TelegramBot bot = new TelegramBot("");
 		ClientManager clientManager = new ClientManager();
 
 		while (true) {

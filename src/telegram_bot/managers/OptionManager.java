@@ -49,6 +49,7 @@ public class OptionManager {
         return "Por favor digite o "  +  option.get().getDescriptionParams()+ " \uD83D\uDE01";
     }
 
+    // Identifica as 5 mensagens das opcoes do menu
     public static OPTIONS getOption(String msg) {
 
         OPTIONS option = OPTIONS.NOT_FOUND;

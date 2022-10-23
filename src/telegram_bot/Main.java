@@ -19,15 +19,13 @@ import java.util.regex.Pattern;
 
 public class Main {
 
-
 	public static void main(String[] args) {
 		GetUpdatesResponse updatesResponse;
 		BaseResponse baseResponse;
-		SendResponse sendResponse;
 
 		int m = 0;
 
-		TelegramBot bot = new TelegramBot("");
+		TelegramBot bot = new TelegramBot("5668370444:AAGDK2RvU7GdvLpLsa9b7YVGp5Oq6-fEUoQ");
 		ClientManager clientManager = new ClientManager();
 
 		while (true) {
@@ -43,17 +41,25 @@ public class Main {
 
 				System.out.println("Mensagem recebida: " + msg);
 
+				// cria um novo client e adiciona ao gerenciador
 				clientManager.addNewClient(new Client(chatId));
 				baseResponse = bot.execute(new SendChatAction(chatId, ChatAction.typing.name()));
 
 				if(baseResponse.isOk()) {
 
+					// Identifica mensagem de sair
 					boolean isEnd = Pattern.matches("^(?i)(sair)$|(?i)(parar)$", msg.toLowerCase());
+
+					// Identifica mensagem de iniciar
 					boolean isStartMsg = Pattern.matches("^(?i)(iniciar)$|(?i)(start)$", msg.toLowerCase());
+
+					// Verifica se e uma mensagem para iniciar o bot
 					if(isStartMsg) {
 						clientManager.updateClientState(chatId, Client.StateCurrent.STARTED);
 					}
 
+					// Verifica se o estado do usuario esta aguardando que ele envie os parametros para consulta
+					// e realiza a busca das infos e envia para o usuario
 					if(clientManager.getClient(chatId).isWaitingSentParams()) {
 						OptionManager.OPTIONS opt = clientManager.getClient(chatId).getOptionSelected();
 
@@ -70,6 +76,7 @@ public class Main {
 
 					}
 
+					// Verifica se o estado do usuario esta aguardando que ele escolha um item no menu de opcoes
 					if(clientManager.getClient(chatId).isWaitingChoose() && !isEnd) {
 						OptionManager.OPTIONS option = OptionManager.getOption(msg);
 						if(OptionManager.isValidOption(option)) {
@@ -81,17 +88,20 @@ public class Main {
 						}
 					}
 
+					// Verifica se o usuario iniciou o bot e exibe o menu para que ele escolha uma opcao
 					if(clientManager.getClient(chatId).isStarted()) {
 						bot.execute(new SendMessage(chatId, "\uD83D\uDCCD Escolha/Digite uma das opções abaixo."));
 						bot.execute(new SendMessage(chatId, OptionManager.getMenu()));
 						clientManager.updateClientState(chatId, Client.StateCurrent.WAITING_FOR_CLIENT_TO_CHOOSE_OPTION);
 					}
 
+					// Verifica se o usuario nao iniciou o bot e envia uma mensagem de boas vindas
 					if(clientManager.getClient(chatId).isNotStarted()) {
 						bot.execute(new SendMessage(chatId, "\uD83D\uDC4B\uD83C\uDFFD Olá, Seja muito bem-vindo(a)! \uD83E\uDD73"));
 						bot.execute(new SendMessage(chatId, "ℹ Para começar digite: Iniciar"));
 					}
 
+					// Verifica se o usuario solicitou para sair do bot
 					if(isEnd) {
 						bot.execute(new SendMessage(chatId, "Obrigado por usar nosso bot! ❤"));
 						clientManager.updateClientState(chatId, Client.StateCurrent.NOT_STARTED);

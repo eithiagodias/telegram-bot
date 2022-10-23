@@ -2,8 +2,6 @@ package telegram_bot.entity;
 
 import telegram_bot.managers.OptionManager;
 
-import java.util.HashMap;
-
 public class Client {
     public enum StateCurrent {
         NOT_STARTED,

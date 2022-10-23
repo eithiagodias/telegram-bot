@@ -5,13 +5,6 @@ import telegram_bot.api.Api;
 import telegram_bot.api.GetInfoException;
 import telegram_bot.api.Response;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-
 class HolidayInfo {
     public String date;
     public String name;

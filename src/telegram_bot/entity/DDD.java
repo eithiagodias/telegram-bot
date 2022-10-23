@@ -5,8 +5,6 @@ import telegram_bot.api.Api;
 import telegram_bot.api.GetInfoException;
 import telegram_bot.api.Response;
 
-import java.util.Arrays;
-
 public class DDD {
     private String state;
     private String[] cities;

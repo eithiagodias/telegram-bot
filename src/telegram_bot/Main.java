@@ -1,8 +1,5 @@
 package telegram_bot;
 
-import java.util.List;
-import java.util.regex.*;
-
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.model.request.ChatAction;
@@ -16,6 +13,9 @@ import telegram_bot.api.GetInfoException;
 import telegram_bot.entity.Client;
 import telegram_bot.managers.ClientManager;
 import telegram_bot.managers.OptionManager;
+
+import java.util.List;
+import java.util.regex.Pattern;
 
 public class Main {
 
